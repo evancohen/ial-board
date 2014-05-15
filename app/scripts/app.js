@@ -8,10 +8,6 @@ angular.module('ialDashboardApp', [
 ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .when('/calendar', {
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl'
@@ -28,7 +24,15 @@ angular.module('ialDashboardApp', [
         templateUrl: 'views/notes.html',
         controller: 'NotesCtrl'
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
+      .when('/dashboard/:category', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/dashboard'
       });
   });
