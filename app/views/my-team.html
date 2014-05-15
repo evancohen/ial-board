@@ -1,1 +1,23 @@
-<p>This is the my-team view.</p>
+<div class="row">
+	<div class="col-md-12">
+		<div class="input-group input-group-lg">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+		  	<input type="search" class="form-control" ng-model="q" placeholder="filter palyers..." />
+		</div>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>First</th>
+					<th>Last</th>
+				</tr>
+			</thead>
+		<tbody>
+			<tr ng-repeat="member in members | filter:q">
+				<td>{{member.first}}</td>
+				<td>{{member.last}}</td>
+			</tr>
+			</tbody>
+		</table>
+    </div>
+</div>
